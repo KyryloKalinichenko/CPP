@@ -26,6 +26,9 @@ class Fixed {
         bool operator>=( const Fixed  & rhs) const;
         bool operator>( const Fixed  & rhs) const;
 
+        static Fixed const & min(const Fixed & one, const Fixed & two);
+        static Fixed const & max(const Fixed & one, const Fixed & two);
+
         Fixed operator+(const Fixed & rhs);
         Fixed operator-(const Fixed & rhs);
         Fixed operator*(const Fixed & rhs);

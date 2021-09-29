@@ -2,10 +2,15 @@
 #include "Fixed.hpp"
 
 int main( void ) {
-    Fixed const b( 42.42f );
-    Fixed const c( 42.42f );
-
-    std::cout << (b == c) << std::endl;
-
+    Fixed a;
+    Fixed const b( Fixed( 5.05f ) * Fixed( 2 ) );
+    std::cout << a << std::endl;
+    std::cout << ++a << std::endl;
+    std::cout << a << std::endl;
+    std::cout << a++ << std::endl;
+    std::cout << a << std::endl;
+    std::cout << b << std::endl;
+    std::cout << Fixed::max( a, b ) << std::endl;
+    
     return 0;
 }
