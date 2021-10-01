@@ -6,11 +6,11 @@ int main(void)
     ClapTrap b("Dima");
 
     a.attack(b.getName());
-    b.takeDammage(2);
+    b.takeDammage(a.get_attack_p());
 
     std::cout << "DO you call it 'attack'!?" <<std::endl;
     b.attack(a.getName());
-    a.takeDammage(10);
+    a.takeDammage(b.get_attack_p());
 
     std::cout << "it is ATACK!" << std::endl;
     b.beRepaired(4);

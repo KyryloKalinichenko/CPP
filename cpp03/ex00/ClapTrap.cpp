@@ -10,6 +10,11 @@ ClapTrap::ClapTrap( std::string name ){
     return;
 }
 
+ClapTrap::ClapTrap( void ): _name("default"), _attack_p(0), _energy_p(0){
+    std::cout << "ClapTrap is here!" << std::endl;
+    return;
+}
+
 ClapTrap::ClapTrap(ClapTrap const & src){
     // set all var
     this->_name = src._name;
@@ -34,6 +39,14 @@ ClapTrap & ClapTrap::operator=( ClapTrap const & src ){
 
 std::string & ClapTrap::getName( void ){
     return _name;
+}
+
+int & ClapTrap::get_energy_p( void ){
+    return _energy_p;
+}
+
+int & ClapTrap::get_attack_p( void ){
+    return _attack_p;
 }
 
 void ClapTrap::attack( std::string const & target){
