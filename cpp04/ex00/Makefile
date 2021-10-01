@@ -6,7 +6,7 @@ SRCS		= ./main.cpp \
 				
 OBJS		= $(SRCS:.cpp=.o)
 RM			= rm -f
-FLAGS		= -Wall -Wextra -Werror 
+FLAGS		= -Wall -Wextra -Werror -Wshadow -Wno-shadow
 COMPILER	= clang++
 
 .cpp.o:
