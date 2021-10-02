@@ -1,6 +1,7 @@
 #include "Animal.hpp"
 
 Animal::Animal( void ){
+    std::cout << "An Animal here" << std::endl;
     return;
 }
 
@@ -27,7 +28,7 @@ Animal & Animal::operator=( Animal const & rhs ){
 }
 
 void    Animal::makeSound( void ) const{
-    std::cout << "Animal here" << std::endl;
+    std::cout << _type << " here" << std::endl;
 }
 
 const std::string &    Animal::getType( void ) const{

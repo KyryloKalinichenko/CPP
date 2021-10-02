@@ -2,6 +2,7 @@
 
 Dog::Dog( void ){
     _type = "Dog";
+    std::cout << "A new Dog " << std::endl;
     return;
 }
 
@@ -22,6 +23,6 @@ Dog & Dog::operator=( Dog const & rhs ){
     return *this;
 }
 
-void    Dog::makeSound( void ){
+void    Dog::makeSound( void ) const{
     std::cout << "The Dog here!" << std::endl;
 }

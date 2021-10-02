@@ -1,6 +1,7 @@
 #include "Cat.hpp"
 
 Cat::Cat( void ){
+    std::cout << "A new Cat " << std::endl;
     _type = "Cat";
     return;
 }
@@ -16,7 +17,7 @@ Cat::Cat( void ){
 //     return;
 // }
 
-void    Cat::makeSound( void ){
+void    Cat::makeSound( void ) const{
     std::cout << "The Cat here!" << std::endl;
 }
 

@@ -9,7 +9,7 @@ class Animal {
         Animal( std::string type );
         Animal(Animal const & src);
         ~Animal( void );
-        void    makeSound( void ) const;
+        void virtual makeSound( void ) const;
 
         Animal & operator=( Animal const & rhs );
         const std::string &  getType( void ) const;

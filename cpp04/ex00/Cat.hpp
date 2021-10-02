@@ -9,7 +9,7 @@ class Cat : public Animal{
         Cat( void );
         Cat(Animal const & src);
         Cat & operator=( Cat const & rhs );
-        void makeSound( void );
+        void virtual makeSound( void ) const;
 };
 
 #endif
