@@ -14,10 +14,16 @@ Fixed::Fixed( int i ){
 }
 
 Fixed::Fixed( float i ){
+    // std::cout << i << std::endl;
     this->_fixed = (int)roundf(i * (1 << this->_frac));
-    // std::cout << "float constr" << std::endl;
+    // std::cout << _fixed << std::endl;
+
     return;
 }
+// 101.00001100110011001101
+// 10100001101
+// 
+
 
 Fixed::Fixed(Fixed const & src){
     // std::cout << "copy constr" << std::endl;
