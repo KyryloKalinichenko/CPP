@@ -18,3 +18,7 @@ Name & Name::operator=( Name const & rhs ){
     // ser var
     return ;
 }
+
+std::string & Name::getType( void ){
+	return _type;
+}

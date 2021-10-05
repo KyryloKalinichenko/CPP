@@ -1,7 +1,8 @@
 #include "DiamondTrap.hpp"
 
-DiamondTrap::DiamondTrap( std::string name ):FragTrap(name), ScavTrap(name){
+DiamondTrap::DiamondTrap( std::string name ): FragTrap(name + "_clap_name"), ScavTrap(name + "_clap_name"){
     std::cout << "DiamondTrap is here!" << std::endl;
+	_name = name;
     _attack_p = 30;
     _energy_p = 100;
     return;
@@ -30,5 +31,6 @@ DiamondTrap & DiamondTrap::operator=( DiamondTrap const & src ){
 }
 
 void DiamondTrap::whoAmI( void ){
+    std::cout << _name << " my name " << _name << std::endl;
     std::cout << _name << " faser's name " << getName() << std::endl;
 }

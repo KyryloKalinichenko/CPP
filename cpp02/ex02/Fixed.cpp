@@ -69,6 +69,18 @@ Fixed const & Fixed::max(const Fixed & one, const Fixed & two){
     return one;
 }
 
+Fixed & Fixed::min(Fixed & one, Fixed & two){
+    if (one > two)
+        return two;
+    return one;
+}
+
+Fixed & Fixed::max(Fixed & one, Fixed & two){
+    if (one < two)
+        return two;
+    return one;
+}
+
 Fixed Fixed::operator+(const Fixed & rhs){
     // std::cout << "oper +" << std::endl;
     Fixed tmp(this->toFloat() + rhs.toFloat());

@@ -18,5 +18,7 @@ int main(void)
     b.beRepaired(4);
     a.highFivesGuys();
     b.highFivesGuys();
+
+	a.whoAmI();
     return 0;
 }

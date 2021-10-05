@@ -28,6 +28,8 @@ class Fixed {
 
         static Fixed const & min(const Fixed & one, const Fixed & two);
         static Fixed const & max(const Fixed & one, const Fixed & two);
+		static Fixed & min(Fixed & one, Fixed & two);
+        static Fixed & max(Fixed & one, Fixed & two);
 
         Fixed operator+(const Fixed & rhs);
         Fixed operator-(const Fixed & rhs);
