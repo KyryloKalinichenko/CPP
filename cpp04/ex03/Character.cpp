@@ -44,20 +44,24 @@ std::string const & Character::getName() const{
 }
 
 void Character::equip(AMateria* m){
+	std::cout << "equip\n";
 	if (_st_size == 4 )
 		return ;
+	_st_size++;
 	_stock[_st_size - 1] = m->clone();
 }
 
 void Character::unequip(int idx){
+	std::cout << "unequip\n";
 	if (!_st_size)
 		return ;
+	_st_size--;
 	_stock[idx] = NULL;
 }
 
 void Character::use(int idx, ICharacter& target){
 	if (idx < 0 || idx > 3)
 		return ;
-	std::cout << _stock[idx]->getType() << std::endl;
-	std::cout << target.getName() << std::endl;
+	_stock[idx]->use(target);
+	// std::cout << target.getName() << std::endl;
 }

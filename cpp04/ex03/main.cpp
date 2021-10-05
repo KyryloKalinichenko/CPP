@@ -19,6 +19,7 @@ int main()
 	bob.equip(&a);
 	bob.equip(&b);
 
+	std::cout << "*****************************\n";
 	bob.use(0, bob);
 
 
