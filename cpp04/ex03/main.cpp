@@ -1,23 +1,26 @@
 #include <iostream>
 #include "AMateria.hpp"
-#include "Cure.hpp"
 #include "Ice.hpp"
+#include "Cure.hpp"
+#include "Character.hpp"
+#include "ICharacter.hpp"
 
 int main()
 {
 	Cure a;
 	Ice b;
 
-	AMateria* p = new Cure();
-	AMateria* ptr = new Ice();
 
 	std::cout << a.getType() << std::endl;
 	std::cout << b.getType() << std::endl;
-	std::cout << p->getType() << std::endl;
-	std::cout << ptr->getType() << std::endl;
 
-	delete p;
-	delete ptr;
+	Character bob("Bob");
+
+	bob.equip(&a);
+	bob.equip(&b);
+
+	bob.use(0, bob);
+
 
 
 	// IMateriaSource* src = new MateriaSource();
