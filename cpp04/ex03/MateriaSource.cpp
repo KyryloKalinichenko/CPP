@@ -43,7 +43,7 @@ MateriaSource & MateriaSource::operator=( MateriaSource const & rhs ){
 		else
 			_toKnow[i] = rhs._toKnow[i]->clone();
 	}
-    return ;
+    return *this;
 }
 
 int MateriaSource::getSize( void ) const{

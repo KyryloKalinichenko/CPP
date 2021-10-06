@@ -11,8 +11,8 @@ class MateriaSource: IMateriaSource{
 		// std::string & getType( void ) const;
 
         MateriaSource & operator=( MateriaSource const & rhs );
-    	void learnMateria(AMateria* ex) = 0;
-    	AMateria* createMateria(std::string const & type) = 0;
+    	void learnMateria(AMateria* ex);
+    	AMateria* createMateria(std::string const & type);
 		int getSize( void ) const;
 	private:
 		AMateria* _toKnow[4];

@@ -1,5 +1,6 @@
 #include <iostream>
 #include "AMateria.hpp"
+#include "MateriaSource.hpp"
 #include "Ice.hpp"
 #include "Cure.hpp"
 #include "Character.hpp"
@@ -38,8 +39,16 @@ int main()
 
 	std::cout << tmp.getType() << std::endl;
 
-	while (1)
-		sleep(1);
+	MateriaSource mat_s;
+
+	mat_s.learnMateria(&a);
+	mat_s.learnMateria(&b);
+
+	void* ex = mat_s.createMateria("ice");
+
+	std::cout << ((Ice*)(ex))->getType() << std::endl;
+
+
 
 
 	// IMateriaSource* src = new MateriaSource();

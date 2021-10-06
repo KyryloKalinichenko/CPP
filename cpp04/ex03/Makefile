@@ -4,6 +4,7 @@ SRCS		= ./main.cpp \
 				./Cure.cpp \
 				./Ice.cpp \
 				./Character.cpp \
+				./MateriaSource.cpp \
 				
 OBJS		= $(SRCS:.cpp=.o)
 RM			= rm -f
