@@ -2,6 +2,7 @@
 #define FORM_HPP
 
 #include <iostream>
+#include "Bureaucrat.hpp"
 
 class Form {
     public:
@@ -23,6 +24,7 @@ class Form {
         ~Form( void );
 		void getStatus( void );
 		void getName( void );
+		void	beSigned(Bureaucrat & w);
 
         Form & operator=( Form const & rhs );
 

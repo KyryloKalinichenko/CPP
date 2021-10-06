@@ -1,4 +1,5 @@
 #include "Bureaucrat.hpp"
+#include "Form.hpp"
 
 Bureaucrat::Bureaucrat( void ):_name("default"){
 	_grade = 150;
@@ -65,4 +66,18 @@ const std::string & Bureaucrat::getName( void ) const{
 
 int Bureaucrat::getGrade( void ) const{
 	return _grade;
+}
+
+void Bureaucrat::signForm( Form & f ){
+	try {
+		f.beSigned(*this);
+	}
+	catch (GradeTooLowException& e){
+		std::cout << "\n GradeTooLowException \n";
+		exit(1);
+	}
+	catch (GradeTooHighException& e){
+		std::cout << "\nGradeTooHighExceptionn \n";
+		exit(1);
+	}
 }
