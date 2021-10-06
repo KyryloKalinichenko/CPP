@@ -9,6 +9,8 @@ Character::Character( void ){
 Character::Character( std::string const name ){
 	_name = name;
 	_st_size = 0;
+	for(int i = 0; i < 4; i++)
+		_stock[i] = NULL;
     return;
 }
 
@@ -16,7 +18,13 @@ Character::Character(Character const & src){
     // set all var
 	_name = src.getName();
 	_st_size = src.getStSize();
-    return ;
+	for(int i = 0; i < 4; i++){
+		if (!src._stock[i])
+			_stock[i] = NULL;
+		else
+			_stock[i] = src._stock[i]->clone();
+	}
+	return ;
 }
 
 Character::~Character( void ){
@@ -28,7 +36,15 @@ Character & Character::operator=( Character const & rhs ){
     // ser var
 	_name = rhs.getName();
 	_st_size = rhs.getStSize();
-    return *this;
+	for(int i = 0; i < 4; i++){
+		if (_stock[i])
+			delete _stock[i];
+		if (!rhs._stock[i])
+			_stock[i] = NULL;
+		else
+			_stock[i] = rhs._stock[i]->clone();
+	}
+	return *this;
 }
 
 std::string & Character::getType( void ){
@@ -60,7 +76,7 @@ void Character::unequip(int idx){
 }
 
 void Character::use(int idx, ICharacter& target){
-	if (idx < 0 || idx > 3)
+	if (idx < 0 || idx > 3 || !_stock[idx])
 		return ;
 	_stock[idx]->use(target);
 	// std::cout << target.getName() << std::endl;

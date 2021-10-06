@@ -5,10 +5,14 @@
 #include "Character.hpp"
 #include "ICharacter.hpp"
 
+#include <unistd.h>
+
+
 int main()
 {
 	Cure a;
 	Ice b;
+	
 
 
 	std::cout << a.getType() << std::endl;
@@ -19,9 +23,23 @@ int main()
 	bob.equip(&a);
 	bob.equip(&b);
 
-	std::cout << "*****************************\n";
 	bob.use(0, bob);
+	bob.use(1, bob);
+	
+	std::cout << "*****************************\n";
+	bob.unequip(0);
+	bob.unequip(1);
 
+	bob.use(0, bob);
+	bob.use(1, bob);
+
+	std::cout << "*****************************\n";
+	Cure tmp(a);
+
+	std::cout << tmp.getType() << std::endl;
+
+	while (1)
+		sleep(1);
 
 
 	// IMateriaSource* src = new MateriaSource();
