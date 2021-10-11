@@ -6,6 +6,16 @@
 
 class Form {
     public:
+        Form( void );
+        Form(Form const & src);
+		Form(unsigned int s, unsigned int e, std::string name);
+
+        ~Form( void );
+		void getStatus( void );
+		const std::string getName( void ) const;
+		void	beSigned(Bureaucrat & w);
+
+        Form & operator=( Form const & rhs );
 		class GradeTooHighException : public std::exception{
 			const char * what () const throw ()
 			{
@@ -19,14 +29,6 @@ class Form {
 				return "To low!";
 			}
 		};
-        Form( void );
-        Form(Form const & src);
-        ~Form( void );
-		void getStatus( void );
-		void getName( void );
-		void	beSigned(Bureaucrat & w);
-
-        Form & operator=( Form const & rhs );
 
     private:
 		bool _signed;

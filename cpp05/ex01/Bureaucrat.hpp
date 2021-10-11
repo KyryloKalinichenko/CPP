@@ -4,6 +4,7 @@
 #include <iostream>
 // #include "MyException.hpp"
 
+class Form;
 
 class Bureaucrat {
     public:
@@ -27,7 +28,7 @@ class Bureaucrat {
         ~Bureaucrat( void );
 		const std::string & getName( void ) const ;
 		int getGrade( void ) const;
-		void	signForm( Form & f );
+		void	signForm( Form f );
 
         Bureaucrat & operator=( Bureaucrat const & rhs );
 		void	increase( void );

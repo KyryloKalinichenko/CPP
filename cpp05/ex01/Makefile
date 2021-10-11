@@ -1,6 +1,7 @@
 NAME		= name
 SRCS		= ./main.cpp \
 				./Bureaucrat.cpp \
+				./Form.cpp \
 				
 OBJS		= $(SRCS:.cpp=.o)
 RM			= rm -f

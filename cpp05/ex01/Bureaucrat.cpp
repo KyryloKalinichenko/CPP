@@ -68,16 +68,11 @@ int Bureaucrat::getGrade( void ) const{
 	return _grade;
 }
 
-void Bureaucrat::signForm( Form & f ){
+void Bureaucrat::signForm( Form f ){
 	try {
 		f.beSigned(*this);
 	}
 	catch (GradeTooLowException& e){
 		std::cout << "\n GradeTooLowException \n";
-		exit(1);
-	}
-	catch (GradeTooHighException& e){
-		std::cout << "\nGradeTooHighExceptionn \n";
-		exit(1);
 	}
 }
