@@ -10,6 +10,7 @@ ShrubberyCreationForm::ShrubberyCreationForm( std::string name ): Form(145, 137,
 
 ShrubberyCreationForm::ShrubberyCreationForm(ShrubberyCreationForm const & src){
     // set all var
+	(void)src;
     return ;
 }
 
@@ -20,6 +21,7 @@ ShrubberyCreationForm::~ShrubberyCreationForm( void ){
 
 ShrubberyCreationForm & ShrubberyCreationForm::operator=( ShrubberyCreationForm const & rhs ){
     // ser var
+	(void)rhs;
     return *this;
 }
 
@@ -27,6 +29,6 @@ ShrubberyCreationForm & ShrubberyCreationForm::operator=( ShrubberyCreationForm 
 // 	return _type;
 // }
 
-void ShrubberyCreationForm::action( std::string target){
+void Form::action( std::string target) const{
 	std::cout << target << std::endl;
 }

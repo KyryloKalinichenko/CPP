@@ -4,14 +4,14 @@
 #include <iostream>
 #include "Form.hpp"
 
-class ShrubberyCreationForm: public Form {
+class ShrubberyCreationForm: virtual public Form {
     public:
         ShrubberyCreationForm( void );
         ShrubberyCreationForm( std::string name );
         ShrubberyCreationForm(ShrubberyCreationForm const & src);
         ~ShrubberyCreationForm( void );
         ShrubberyCreationForm & operator=( ShrubberyCreationForm const & rhs );
-		void action( std::string target);
+		// void Form::action( std::string target ) const;
 
 	private:
 		std::string _name;

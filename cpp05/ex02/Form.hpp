@@ -18,7 +18,7 @@ class Form: public Exception{
 		void execute( Bureaucrat const & executor );
 
         Form & operator=( Form const & rhs );
-		virtual void action( std::string target ) = 0;
+		virtual void action( std::string target ) const;
 
     private:
 		bool _signed;
