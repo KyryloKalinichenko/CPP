@@ -2,12 +2,13 @@
 #define BUREAUCRAT_HPP
 
 #include <iostream>
-// #include "MyException.hpp"
-#include "Form.hpp"
+#include "Exceptions.hpp"
 
 class Form;
+class Exception;
 
-class Bureaucrat {
+
+class Bureaucrat: public Exception{
     public:
 
 		class GradeTooHighException : public std::exception{
@@ -29,7 +30,7 @@ class Bureaucrat {
         ~Bureaucrat( void );
 		const std::string & getName( void ) const ;
 		int getGrade( void ) const;
-		void	signForm( Form & f );
+		void	signForm( Form f );
 
         Bureaucrat & operator=( Bureaucrat const & rhs );
 		void	increase( void );

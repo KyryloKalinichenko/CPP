@@ -1,20 +1,27 @@
 #include <iostream>
 #include "Bureaucrat.hpp"
+#include "ShrubberyCreationForm.hpp"
 
 int main( void ){
-	Bureaucrat a("David");
-	a.increase();
-	Form f("todo", 150);
-	Form f2("todo", 149);
-	Form f3("todo", 148);
+	Bureaucrat a("Dave");
+	ShrubberyCreationForm f;
 
-	std::cout << a << std::endl;
-	std::cout << f << std::endl;
-
+	std::cout << a;
 	a.signForm(f);
-	a.signForm(f2);
-	a.signForm(f3);
+	// for (int i = 0; i < 149 ; i++)
+	// {
+	// 	std::cout << i;
+	// 	a.increase();
+	// 	a.signForm();
+	// }
+	// std::cout << std::endl << a;
 
+	// for (int i = 0; i < 149 ; i++)
+	// {
+	// 	std::cout << i;
+	// 	a.decrease();
+	// }
+	// std::cout << std::endl << a;
 
 	return 0;
 }

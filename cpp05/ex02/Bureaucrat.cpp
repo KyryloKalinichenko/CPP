@@ -42,7 +42,7 @@ void	Bureaucrat::increase( void ){
 	}
 	catch (GradeTooHighException& e){
 		std::cout << "\nGradeTooHighExceptionn \n";
-		// exit(1);
+		exit(1);
 	}
 }
 
@@ -56,7 +56,7 @@ void	Bureaucrat::decrease( void ){
 	}
 	catch (GradeTooLowException& e){
 		std::cout << "\n GradeTooLowException \n";
-		// exit(1);
+		exit(1);
 	}
 }
 
@@ -68,14 +68,11 @@ int Bureaucrat::getGrade( void ) const{
 	return _grade;
 }
 
-void Bureaucrat::signForm( Form & f ){
+void Bureaucrat::signForm( Form f ){
 	try {
 		f.beSigned(*this);
 	}
-	catch (Form::GradeTooLowException& e){
-		std::cout << "\n GradeTooLowException \n";
-	}
-	catch (Form::GradeTooHighException& e){
-		std::cout << "\nGradeTooHighExceptionn \n";
+	catch (std::exception& e){
+		std::cout << "\n Too low exception caught! \n";
 	}
 }

@@ -3,47 +3,29 @@
 
 #include <iostream>
 #include "Bureaucrat.hpp"
+#include "Exceptions.hpp"
 
-class Bureaucrat;
-class Form {
+class Form: public Exception{
     public:
-		class GradeTooHighException : public std::exception{
-			const char * what () const throw ()
-			{
-				return "To big!";
-			}
-		};
-
-		class GradeTooLowException : public std::exception{
-			const char * what () const throw ()
-			{
-				return "To low!";
-			}
-		};
-
-
-
         Form( void );
-		Form( const std::string name, const int grade_tosign );
-
         Form(Form const & src);
+		Form(unsigned int s, unsigned int e, const char* name);
+
         ~Form( void );
 		void getStatus( void );
-		const std::string& getName( void ) const;
-		int	getGrade_tosign( void );
-		bool getSign( void );
-
-		void	beSigned( Bureaucrat & w );
+		const std::string getName( void ) const;
+		void	beSigned(Bureaucrat & w);
+		void execute( Bureaucrat const & executor );
 
         Form & operator=( Form const & rhs );
+		virtual void action( std::string target ) = 0;
 
     private:
-		const std::string	_name;
 		bool _signed;
+		bool _exec;
 		const int	_grade_tosign;
+		const int	_grade_toexec;
+		const std::string	_name;
 };
-
-std::ostream & operator<<( std::ostream & o, Form & rhs );
-
 
 #endif
