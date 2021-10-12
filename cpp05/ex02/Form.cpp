@@ -68,6 +68,7 @@ void 	Form::execute( Bureaucrat const & executor ){
 	}
 	else {
 		_exec = 1;
+		action(executor.getName());
 		std::cout << _name << " has been executed!\n";
 	}
 }

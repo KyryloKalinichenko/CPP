@@ -29,16 +29,3 @@ RobotomyRequestForm & RobotomyRequestForm::operator=( RobotomyRequestForm const 
 void RobotomyRequestForm::action( std::string target) const{
 	std::cout << "Bzzzzzzzz" << target << " has been robotomized successfully 50% of the time." << std::endl;
 }
-
-void 	RobotomyRequestForm::execute( Bureaucrat const & executor ){
-	if (executor.getGrade() < this->_grade_toexec || !_signed)
-	{
-		throw GradeTooHighException();
-		std::cout << _name << " hasn't been executed!\n";
-	}
-	else {
-		_exec = 1;
-		action(executor.getName());
-		std::cout << _name << " has been executed!\n";
-	}
-}
