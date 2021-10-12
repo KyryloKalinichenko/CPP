@@ -1,4 +1,5 @@
 #include "ShrubberyCreationForm.hpp"
+#include <fstream>
 
 ShrubberyCreationForm::ShrubberyCreationForm( void ): Form(145, 137, "ShrubberyCreationForm"), _name("ShrubberyCreationForm"){
     return;
@@ -25,10 +26,26 @@ ShrubberyCreationForm & ShrubberyCreationForm::operator=( ShrubberyCreationForm 
     return *this;
 }
 
-// std::string & ShrubberyCreationForm::getType( void ){
-// 	return _type;
-// }
 
-void Form::action( std::string target) const{
-	std::cout << target << std::endl;
+void ShrubberyCreationForm::action( std::string target) const{
+	std::ofstream outdata;
+
+	try{
+		outdata.open(target + "_shrubbery");
+	}
+	catch(std::exception& e)
+	{
+		std::cout << "Not able to open the file !\n";
+	}
+	outdata << "	   		  ,@@@@@@@," << std::endl;
+	outdata << "	  ,,,.   ,@@@@@@/@@,  .oo8888o." << std::endl;
+	outdata << "	,&%%&%&&%,@@@@@/@@@@@@,8888888/8o" << std::endl;
+	outdata << "	,%&&&&&%&&%,@@@@@@@/@@@88888888/88'" << std::endl;
+	outdata << "	%&&%&%&/%&&%@@@@@/ /@@@88888888888'" << std::endl;
+	outdata << "	%&&%/ %&%%&&@@| V /@@' `8888 `/88'" << std::endl;
+	outdata << "	`&%| ` /%&'    |.|        | '|8'" << std::endl;
+	outdata << "	   |o|         | |        | |" << std::endl;
+	outdata << "	   |.|         | |        | |" << std::endl;
+	outdata << "	jgs \\/ ._  /_/  ,//__\\/. _//__/_" << std::endl;
+	outdata.close();
 }

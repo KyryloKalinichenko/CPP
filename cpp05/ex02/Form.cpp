@@ -54,20 +54,20 @@ void	Form::beSigned(Bureaucrat & w){
 	}
 	else
 	{
-		_signed = 1;
+		_signed = true;
 		std::cout << _name << " has been signed!\n";
+		std::cout << _signed << std::endl; 
 	}
 }
 
 void 	Form::execute( Bureaucrat const & executor ){
-	if (executor.getGrade() < this->_grade_toexec)
+	if (executor.getGrade() < this->_grade_toexec || !_signed)
 	{
 		throw GradeTooHighException();
 		std::cout << _name << " hasn't been executed!\n";
 	}
 	else {
 		_exec = 1;
-		action( executor.getName() );
 		std::cout << _name << " has been executed!\n";
 	}
 }

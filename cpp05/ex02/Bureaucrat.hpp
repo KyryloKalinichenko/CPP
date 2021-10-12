@@ -26,11 +26,12 @@ class Bureaucrat: public Exception{
 		};
         Bureaucrat( void );
 		Bureaucrat( std::string name );
+		Bureaucrat( const std::string name, const unsigned int grade );
         Bureaucrat(Bureaucrat const & src);
         ~Bureaucrat( void );
 		const std::string & getName( void ) const ;
 		int getGrade( void ) const;
-		void	signForm( Form f );
+		void	signForm( Form & f );
 
         Bureaucrat & operator=( Bureaucrat const & rhs );
 		void	increase( void );

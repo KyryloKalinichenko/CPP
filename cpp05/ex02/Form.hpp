@@ -1,7 +1,6 @@
 #ifndef FORM_HPP
 #define FORM_HPP
 
-#include <iostream>
 #include "Bureaucrat.hpp"
 #include "Exceptions.hpp"
 
@@ -15,10 +14,10 @@ class Form: public Exception{
 		void getStatus( void );
 		const std::string getName( void ) const;
 		void	beSigned(Bureaucrat & w);
-		void execute( Bureaucrat const & executor );
+		virtual void execute( Bureaucrat const & executor );
 
         Form & operator=( Form const & rhs );
-		virtual void action( std::string target ) const;
+		// virtual void action( std::string target ) const;
 
     private:
 		bool _signed;

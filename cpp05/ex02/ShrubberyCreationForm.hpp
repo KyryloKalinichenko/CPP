@@ -1,7 +1,6 @@
 #ifndef SHRUBBERYCREATIONFORM_HPP
 #define SHRUBBERYCREATIONFORM_HPP
 
-#include <iostream>
 #include "Form.hpp"
 
 class ShrubberyCreationForm: virtual public Form {
@@ -11,7 +10,7 @@ class ShrubberyCreationForm: virtual public Form {
         ShrubberyCreationForm(ShrubberyCreationForm const & src);
         ~ShrubberyCreationForm( void );
         ShrubberyCreationForm & operator=( ShrubberyCreationForm const & rhs );
-		// void Form::action( std::string target ) const;
+		void ShrubberyCreationForm::action( std::string target ) const;
 
 	private:
 		std::string _name;

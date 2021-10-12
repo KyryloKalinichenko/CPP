@@ -16,6 +16,11 @@ Bureaucrat::Bureaucrat(Bureaucrat const & src): _name(src.getName()), _grade(src
     return ;
 }
 
+Bureaucrat::Bureaucrat(const std::string name, const unsigned int grade): _name(name), _grade(grade){
+    // set all var
+    return ;
+}
+
 Bureaucrat::~Bureaucrat( void ){
     // delete
     return;
@@ -68,7 +73,7 @@ int Bureaucrat::getGrade( void ) const{
 	return _grade;
 }
 
-void Bureaucrat::signForm( Form f ){
+void Bureaucrat::signForm( Form & f ){
 	try {
 		f.beSigned(*this);
 	}
