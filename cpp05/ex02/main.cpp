@@ -2,6 +2,7 @@
 #include "Bureaucrat.hpp"
 #include "ShrubberyCreationForm.hpp"
 #include "RobotomyRequestForm.hpp"
+#include "PresidentialPardonForm.hpp"
 
 // class ShrubberyCreationForm;
 // class RobotomyRequestForm;
@@ -13,6 +14,7 @@ int main( void ){
 
 	ShrubberyCreationForm f;
 	RobotomyRequestForm f1;
+	PresidentialPardonForm f2;
 
 	std::cout << a;
 	a.signForm(f);
@@ -31,6 +33,15 @@ int main( void ){
 	}
 	catch(std::exception& e){
 		std::cout << "\n Robotimisation failed! \n";
+	}
+
+	a.signForm(f2);
+	std::cout << "-------------------\n";
+	try{
+		f2.execute(b);
+	}
+	catch(std::exception& e){
+		std::cout << "\n Pardon failed! \n";
 	}
 		
 	// for (int i = 0; i < 149 ; i++)
