@@ -28,17 +28,21 @@ const char * Convertor::FailExc::what () const throw (){
 
 void Convertor::use( void ){
     std::cout << "char :";
-    try
-    {
-        int i = static_cast<int>(*this);
-        if (std::isprint(i))
-            std::cout << "'" <<  i << "'" << std::endl;
-        else
-            std::cout << "Not printable" << std::endl;
-    }
-    catch(const std::exception& e)
-    {
-        std::cout << e.what() << '\n';
+    if (_s.length() == 1 && std::isalpha(_s[0]))
+        std::cout << "'" << static_cast<char>(_s[0]) << "'" << std::endl;
+    else{
+        try
+        {
+            int i = static_cast<int>(*this);
+            if (std::isprint(i))
+                std::cout << "'" <<  static_cast<char>(i) << "'" << std::endl;
+            else
+                std::cout << "Not printable" << std::endl;
+        }
+        catch(const std::exception& e)
+        {
+            std::cout << e.what() << '\n';
+        }
     }
 
     std::cout << "int :";
