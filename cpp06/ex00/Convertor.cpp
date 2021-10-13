@@ -85,7 +85,7 @@ Convertor::operator int() const{
     }
     catch(const std::exception& e)
     {
-        std::cerr << e.what() << '\n';
+        throw FailExc();
     }
     return i;
 
@@ -99,7 +99,7 @@ Convertor::operator float() const{
     }
     catch(const std::exception& e)
     {
-        std::cerr << e.what() << '\n';
+        throw FailExc();
     }
     return i;
 
@@ -113,7 +113,7 @@ Convertor::operator double() const{
     }
     catch(const std::exception& e)
     {
-        std::cerr << e.what() << '\n';
+        throw FailExc();
     }
     return i;
 
