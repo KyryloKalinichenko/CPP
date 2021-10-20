@@ -16,14 +16,16 @@ int main()
 
 	MutantStack<int>::iterator it = mstack.begin();
 	MutantStack<int>::iterator ite = mstack.end();
-	std::cout << *it << std::endl;
-	std::cout << *ite << std::endl;
+	// std::cout << *it << std::endl;
+	// std::cout << *ite << std::endl;
 	++it;
 	--it;
-	std::cout << *it << std::endl;
-	std::cout << *ite << std::endl;
-	// while (it != ite) {
-	// 	std::cout << *it << std::endl;
-	// ++it; }
-	// std::stack<int> s(mstack); return 0;
+	// std::cout << *it << std::endl;
+	// std::cout << *ite << std::endl;
+	while (it != ite) {
+		std::cout << *it << std::endl;
+		++it; 
+	}
+	std::stack<int> s(mstack);
+	return 0;
 }

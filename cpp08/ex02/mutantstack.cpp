@@ -1,4 +1,4 @@
-// #include "mutantstack.hpp"
+#include "mutantstack.hpp"
 
 // MutantStack::MutantStack( void ): std::stack(){
 //     return;
