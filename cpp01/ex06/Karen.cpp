@@ -2,7 +2,14 @@
 
 Karen::Karen( std::string filter ) {
 	std::cout << "created" << std::endl;
-	_filter = filter;
+	std::string	msg[4] = {"DEBUG", "INFO", "WARNING", "ERROR"};
+    int i;
+	for (i = 0; i < 5; i++)
+    {
+        if (msg[i] == filter)
+			break; 
+	}
+	_filter = i;
     return ;
 }
 
@@ -39,9 +46,18 @@ void Karen::_error( void ){
 void Karen::complain( std::string level ){
     std::string	msg[4] = {"DEBUG", "INFO", "WARNING", "ERROR"};
     Fpoint mfs[] = { &Karen::_debug, &Karen::_info, &Karen::_warning, &Karen::_error};
-    for (int i = 0; i < 4; i++)
+    int i;
+	for (i = 0; i < 4; i++)
     {
-        if (msg[i] == level && _filter != level)
-            (this->*(mfs[i]))();
-    }
+        if (msg[i] == level)
+			break; 
+	}
+	switch(static_cast<int>(i >= _filter)){
+		case 0:
+			return ;
+		case 1:
+			(this->*(mfs[i]))();
+		default:
+			return ;
+	}
 }
