@@ -10,7 +10,7 @@ class Karen {
         void complain( std::string level );
 
     private:
-		std::string _filter;
+		int _filter;
         void _debug( void );
         void _info( void );
         void _warning( void );
