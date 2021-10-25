@@ -1,5 +1,7 @@
 #include "Fixed.hpp"
 
+int const Fixed::_frac = 8;
+
 Fixed::Fixed( void ):_fixed(0){
     std::cout << "Default constructor." << std::endl;
     return;
