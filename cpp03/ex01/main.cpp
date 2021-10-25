@@ -3,9 +3,12 @@
 
 int main(void)
 {
+    std::cout << "---- CONSTRUCTORS ----" << std::endl << std::endl;
     ScavTrap a("Mike");
     ScavTrap b("Dima");
 
+
+    std::cout << "---- ACTION ----" << std::endl << std::endl;
     a.attack(b.getName());
     b.takeDammage(2);
 
@@ -15,5 +18,9 @@ int main(void)
 
     std::cout << "it is ATACK!" << std::endl;
     b.beRepaired(4);
+
+	a.guard();
+	b.guard();
+    std::cout << "---- DESTRUCTORS ----" << std::endl <<std::endl;
     return 0;
 }

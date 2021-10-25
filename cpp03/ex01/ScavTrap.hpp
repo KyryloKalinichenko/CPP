@@ -18,7 +18,6 @@ class ScavTrap : public ClapTrap{
         ScavTrap & operator=( ScavTrap const & rhs );
 
     private:
-        static const int _hit_p;
         int     _guard;
 
     //     int _attack_p;
