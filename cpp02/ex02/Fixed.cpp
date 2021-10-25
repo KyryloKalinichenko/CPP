@@ -2,7 +2,7 @@
 
 int const Fixed::_frac = 8;
 
-Fixed::Fixed( void ){
+Fixed::Fixed( void ):_fixed(0){
     // std::cout << "default constr" << std::endl;
     return;
 }
@@ -27,7 +27,7 @@ Fixed::Fixed( float i ){
 
 Fixed::Fixed(Fixed const & src){
     // std::cout << "copy constr" << std::endl;
-    *this = src;
+    this->_fixed = src._fixed;
     return ;
 }
 
@@ -89,7 +89,9 @@ Fixed Fixed::operator+(const Fixed & rhs){
 
 Fixed & Fixed::operator++( void ){
     // std::cout << "oper ++" << std::endl;
-    this->_fixed += 1;
+    float tmp = this->toFloat();
+	tmp += 1;
+	*this = Fixed(tmp);
     return *this;
 }
 
@@ -102,7 +104,9 @@ Fixed Fixed::operator++( int ){
 
 Fixed & Fixed::operator--( void ){
     // std::cout << "oper --" << std::endl;
-    this->_fixed -= 1;
+    float tmp = this->toFloat();
+	tmp -= 1;
+	*this = Fixed(tmp);
     return *this;
 }
 
