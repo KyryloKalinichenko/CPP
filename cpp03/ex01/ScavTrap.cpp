@@ -42,15 +42,6 @@ void ScavTrap::attack( std::string const & target){
         std::cout << "ScavTrap " << _name << "have no energy for attack or guard mode activated." << std::endl;
 }
 
-void ScavTrap::takeDammage( unsigned int amount ){
-    if (!_guard){
-        std::cout << this->_name << " got " << amount << " points of damage" <<  std::endl;
-        _attack_p-= amount;
-    }
-    else
-        std::cout << this->_name << " blocked " << amount << "points of damage" <<  std::endl;
-}
-
 void ScavTrap::guard( void ){
     _guard = 1;
         std::cout << _name << " guard mode activated." << std::endl;
