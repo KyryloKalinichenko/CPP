@@ -6,6 +6,7 @@
 class ClapTrap {
     public:
         ClapTrap( std::string name );
+        ClapTrap( void );
         ClapTrap(ClapTrap const & src);
         ~ClapTrap( void );
 
@@ -19,10 +20,10 @@ class ClapTrap {
         int & get_energy_p( void );
 
        protected:
+        std::string _name;
         int _attack_p;
         int _energy_p;
-        std::string _name;
-        static const int _hit_p;
+        int _hit_p;
 
 };
 

@@ -19,7 +19,7 @@ FragTrap::FragTrap(FragTrap const & src):ClapTrap(src){
 }
 
 FragTrap::~FragTrap( void ){
-    std::cout << "FragTrap is dead!" << std::endl;
+    std::cout << "FragTrap " << _name << " is dead!" << std::endl;
     // delete
     return;
 }

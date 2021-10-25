@@ -3,10 +3,11 @@
 
 int main(void)
 {
+    std::cout << "--- CONSTRUCTORS ---" << std::endl << std::endl;
     FragTrap a("Mike");
     FragTrap b("Dima");
-    std::cout << "**********************************************" << std::endl;
 
+    std::cout << "--- ACTION ---" << std::endl << std::endl;
     a.attack(b.getName());
     b.takeDammage(2);
 
@@ -18,5 +19,6 @@ int main(void)
     b.beRepaired(4);
     a.highFivesGuys();
     b.highFivesGuys();
+    std::cout << "--- DESTRUCTORS ---" << std::endl << std::endl;
     return 0;
 }
