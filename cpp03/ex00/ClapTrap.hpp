@@ -20,10 +20,10 @@ class ClapTrap {
         int & get_energy_p( void );
 
     private:
+        std::string _name;
         int _attack_p;
         int _energy_p;
-        std::string _name;
-        static const int _hit_p;
+        int _hit_p;
 
 };
 
