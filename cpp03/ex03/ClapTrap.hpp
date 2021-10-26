@@ -12,7 +12,7 @@ class ClapTrap {
 
         ClapTrap & operator=( ClapTrap const & src );
         void attack( std::string const & target);
-        void takeDammage( unsigned int amount );
+        void takeDamage( unsigned int amount );
         void beRepaired( unsigned int amount );
 
         std::string & getName( void );
@@ -20,10 +20,10 @@ class ClapTrap {
         int & get_energy_p( void );
 
        protected:
+        std::string _name;
         int _attack_p;
         int _energy_p;
-        std::string _name;
-        static const int _hit_p;
+        int _hit_p;
 
 };
 

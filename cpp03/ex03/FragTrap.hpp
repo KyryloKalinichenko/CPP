@@ -13,8 +13,6 @@ class FragTrap : virtual public ClapTrap{
         FragTrap & operator=( FragTrap const & rhs );
         void    highFivesGuys( void ) const;
 
-    protected:
-        static const int _hit_p;
 };
 
 #endif

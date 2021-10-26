@@ -6,7 +6,7 @@
 #include "FragTrap.hpp"
 #include <iostream>
 
-class DiamondTrap : virtual public ClapTrap, public FragTrap, public ScavTrap{
+class DiamondTrap : public FragTrap, public ScavTrap{
     public:
         DiamondTrap( std::string name );
         DiamondTrap(DiamondTrap const & src);

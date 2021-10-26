@@ -11,20 +11,14 @@ class ScavTrap : virtual public ClapTrap{
         ~ScavTrap( void );
 
         void attack( std::string const & target);
-        void guard( void );
-        void takeDammage( unsigned int amount );
+        void guardGate( void );
+        void takeDamage( unsigned int amount );
 
 
         ScavTrap & operator=( ScavTrap const & rhs );
 
     private:
-        static const int _hit_p;
         int     _guard;
-
-    //     int _attack_p;
-    //     int _energy_p;
-    //     std::string _name;
-    //     static const int _hit_p;
 };
 
 #endif
