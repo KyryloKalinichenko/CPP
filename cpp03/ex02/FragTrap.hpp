@@ -12,9 +12,10 @@ class FragTrap : public ClapTrap{
 
         FragTrap & operator=( FragTrap const & rhs );
         void    highFivesGuys( void ) const;
+        void attack( std::string const & target);
 
     private:
-        static const int _hit_p;
+        int _hit_p;
 };
 
 #endif

@@ -9,11 +9,11 @@ int main(void)
 
     std::cout << "--- ACTION ---" << std::endl << std::endl;
     a.attack(b.getName());
-    b.takeDammage(2);
+    b.takeDamage(2);
 
     std::cout << "DO you call it 'attack'!?" <<std::endl;
     b.attack(a.getName());
-    a.takeDammage(10);
+    a.takeDamage(10);
 
     std::cout << "it is ATACK!" << std::endl;
     b.beRepaired(4);

@@ -47,13 +47,13 @@ int & ClapTrap::get_attack_p( void ){
 void ClapTrap::attack( std::string const & target){
     if (_energy_p){
         _energy_p -= 1;
-        std::cout << _name << " attack " << target << std::endl;
+        std::cout << "ClapTrap " << _name << " attack " << target << std::endl;
     }
     else
-        std::cout << _name << " have no energy for attack." << std::endl;
+        std::cout << "ClapTrap " << _name << " have no energy for attack." << std::endl;
 }
 
-void ClapTrap::takeDammage( unsigned int amount ){
+void ClapTrap::takeDamage( unsigned int amount ){
     std::cout << this->_name << " got " << amount << " point of damage" <<  std::endl;
     _attack_p-= amount;
 

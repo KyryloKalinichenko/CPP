@@ -42,7 +42,7 @@ void ScavTrap::attack( std::string const & target){
         std::cout << "ScavTrap " << _name << "have no energy for attack or guard mode activated." << std::endl;
 }
 
-void ScavTrap::guard( void ){
+void ScavTrap::guardGate( void ){
     _guard = 1;
         std::cout << _name << " guard mode activated." << std::endl;
 }

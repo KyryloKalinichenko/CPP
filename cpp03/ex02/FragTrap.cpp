@@ -1,12 +1,11 @@
 #include "FragTrap.hpp"
 
-const int FragTrap::_hit_p = 100;
-
 FragTrap::FragTrap( std::string name ): ClapTrap(name){
     std::cout << "FragTrap is here!" << std::endl;
     _name = name;
     _attack_p = 30;
     _energy_p = 100;
+	_hit_p = 100;
     return;
 }
 
@@ -34,4 +33,13 @@ FragTrap & FragTrap::operator=( FragTrap const & src ){
 
 void    FragTrap::highFivesGuys( void ) const{
     std::cout << "Hey, give me high five!" << std::endl;
+}
+
+void FragTrap::attack( std::string const & target){
+    if (_energy_p){
+        _energy_p -= 1;
+        std::cout << "FragTrap " << _name << " attacks " << target << std::endl;
+    }
+    else
+        std::cout << "FragTrap " << _name << "have no energy for attack." << std::endl;
 }

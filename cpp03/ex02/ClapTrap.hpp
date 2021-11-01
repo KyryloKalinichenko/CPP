@@ -12,7 +12,7 @@ class ClapTrap {
 
         ClapTrap & operator=( ClapTrap const & src );
         void attack( std::string const & target);
-        void takeDammage( unsigned int amount );
+        void takeDamage( unsigned int amount );
         void beRepaired( unsigned int amount );
 
         std::string & getName( void );
