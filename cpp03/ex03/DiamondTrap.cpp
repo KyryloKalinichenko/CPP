@@ -1,6 +1,6 @@
 #include "DiamondTrap.hpp"
 
-DiamondTrap::DiamondTrap( std::string name ): FragTrap(name + "_clap_name"), ScavTrap(name + "_clap_name"){
+DiamondTrap::DiamondTrap( std::string name ): ClapTrap(name + "_clap_name"){
     std::cout << "DiamondTrap is here!" << std::endl;
 	_name = name;
     return;

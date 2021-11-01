@@ -9,6 +9,14 @@ FragTrap::FragTrap( std::string name ): ClapTrap(name){
     return;
 }
 
+FragTrap::FragTrap( void ): ClapTrap("default"){
+    std::cout << "FragTrap is here!" << std::endl;
+    _attack_p = 30;
+    _energy_p = 100;
+	_hit_p = 100;
+    return;
+}
+
 FragTrap::FragTrap(FragTrap const & src):ClapTrap(src){
     // set all var
     this->_name = src._name;

@@ -10,6 +10,15 @@ ScavTrap::ScavTrap( std::string name ): ClapTrap(name){
     return;
 }
 
+ScavTrap::ScavTrap( void ): ClapTrap("default"){
+    std::cout << "ScavTrap is here!" << std::endl;
+    _attack_p = 20;
+    _energy_p = 50;
+    _guard = 0;
+	_hit_p = 100;
+    return;
+}
+
 ScavTrap::ScavTrap(ScavTrap const & src):ClapTrap(src){
     // set all var
     this->_name = src._name;
@@ -36,10 +45,10 @@ ScavTrap & ScavTrap::operator=( ScavTrap const & src ){
 void ScavTrap::attack( std::string const & target){
     if (_energy_p && !_guard){
         _energy_p -= 1;
-        std::cout << target << " attack " << this->_name << std::endl;
+        std::cout << "ScavTrap " << target << " attack " << this->_name << std::endl;
     }
     else
-        std::cout << _name << " have no energy for attack or guard mode activated." << std::endl;
+        std::cout << "ScavTrap " << _name << " have no energy for attack or guard mode activated." << std::endl;
 }
 
 void ScavTrap::takeDamage( unsigned int amount ){
