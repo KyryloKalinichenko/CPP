@@ -3,7 +3,7 @@
 
 #include "IMateriaSource.hpp"
 
-class MateriaSource: IMateriaSource{
+class MateriaSource: public IMateriaSource{
 	public:
 		MateriaSource( void );
         MateriaSource(MateriaSource const & src);
