@@ -8,11 +8,14 @@ Dog::Dog( void ){
     return;
 }
 
-// Dog::Dog(Dog const & src){
-//     // set all var
-//     _type = src._type;
-//     return ;
-// }
+Dog::Dog(Dog const & src){
+    // set all var
+    _type = src._type;
+	delete _br;
+	_br = new Brain;
+	*_br = *src._br;
+    return ;
+}
 
 Dog::~Dog( void ){
     delete _br;
@@ -22,9 +25,9 @@ Dog::~Dog( void ){
 Dog & Dog::operator=( Dog const & rhs ){
     // ser var
     _type = rhs._type;
-		delete _br;
+	delete _br;
 	_br = new Brain;
-	_br = rhs.getBrain();
+	*_br = *rhs._br;
     return *this;
 }
 

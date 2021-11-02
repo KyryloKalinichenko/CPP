@@ -11,23 +11,24 @@ Animal::Animal( std::string type ){
 }
 
 Animal::Animal(Animal const & src){
+	(void)src;
     // set all var
-    _type = src._type;
     return ;
 }
 
 Animal::~Animal( void ){
+    std::cout << "An Animal" << " destruction" << std::endl;
     return;
 }
 
 Animal & Animal::operator=( Animal const & rhs ){
     // ser var
-    _type = rhs._type;
+	(void)rhs;
     return *this;
 }
 
 void    Animal::makeSound( void ) const{
-    std::cout << _type << " here" << std::endl;
+    std::cout << "An Animal" << " here" << std::endl;
 }
 
 const std::string &    Animal::getType( void ) const{

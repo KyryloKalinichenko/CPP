@@ -7,14 +7,18 @@ Cat::Cat( void ){
     return;
 }
 
-// Cat::Cat(Cat const & src){
-//     // set all var
-//     _type = src._type;
-//     return ;
-// }
+Cat::Cat(Cat const & src){
+    // set all var
+	_type = src._type;
+	delete _br;
+	_br = new Brain;
+	*_br = *src._br;
+    return ;
+}
 
 Cat::~Cat( void ){
-    delete _br;
+	if (_br)
+    	delete _br;
     return;
 }
 
@@ -31,6 +35,6 @@ Cat & Cat::operator=( Cat const & rhs ){
     _type = rhs._type;
 	delete _br;
 	_br = new Brain;
-	_br = rhs.getBrain();
+	*_br = *rhs._br;
     return *this;
 }
