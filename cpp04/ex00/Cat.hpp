@@ -5,11 +5,13 @@
 #include "Animal.hpp"
 
 class Cat : public Animal{
+        
     public:
         Cat( void );
-        Cat(Animal const & src);
+        ~Cat( void );
+        Cat(Cat const & src);
         Cat & operator=( Cat const & rhs );
-        void virtual makeSound( void ) const;
+        virtual void makeSound( void ) const;
 };
 
 #endif

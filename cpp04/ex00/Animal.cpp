@@ -18,6 +18,7 @@ Animal::Animal(Animal const & src){
 
 Animal::~Animal( void ){
     // delete
+    std::cout << "An Animal destructed " << std::endl;
     return;
 }
 
@@ -28,7 +29,7 @@ Animal & Animal::operator=( Animal const & rhs ){
 }
 
 void    Animal::makeSound( void ) const{
-    std::cout << _type << " here" << std::endl;
+    std::cout << "An Animal" << " here" << std::endl;
 }
 
 const std::string &    Animal::getType( void ) const{

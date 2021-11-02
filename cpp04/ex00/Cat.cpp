@@ -6,16 +6,16 @@ Cat::Cat( void ){
     return;
 }
 
-// Cat::Cat(Cat const & src){
-//     // set all var
-//     _type = src._type;
-//     return ;
-// }
+Cat::Cat(Cat const & src){
+    // set all var
+    _type = src._type;
+    return ;
+}
 
-// Cat::~Cat( void ){
-//     // delete
-//     return;
-// }
+Cat::~Cat( void ){
+    // delete
+    return;
+}
 
 void    Cat::makeSound( void ) const{
     std::cout << "The Cat here!" << std::endl;

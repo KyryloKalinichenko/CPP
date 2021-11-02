@@ -6,16 +6,16 @@ Dog::Dog( void ){
     return;
 }
 
-// Dog::Dog(Dog const & src){
-//     // set all var
-//     _type = src._type;
-//     return ;
-// }
+Dog::Dog(Dog const & src){
+    // set all var
+    _type = src._type;
+    return ;
+}
 
-// Dog::~Dog( void ){
-//     // delete
-//     return;
-// }
+Dog::~Dog( void ){
+    // delete
+    return;
+}
 
 Dog & Dog::operator=( Dog const & rhs ){
     // ser var

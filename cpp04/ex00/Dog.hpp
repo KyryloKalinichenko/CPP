@@ -7,7 +7,8 @@
 class Dog : public Animal{
     public:
         Dog( void );
-        Dog(Animal const & src);
+        ~Dog( void );
+        Dog(Dog const & src);
         Dog & operator=( Dog const & rhs );
         void virtual makeSound( void ) const;
 
