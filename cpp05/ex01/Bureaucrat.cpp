@@ -33,31 +33,19 @@ std::ostream & operator<<( std::ostream & o, Bureaucrat const & rhs ){
 }
 
 void	Bureaucrat::increase( void ){
-	try{
-		if (_grade == 1)
-		{
-			throw GradeTooHighException();
-		}
-		_grade--;
+	if (_grade == 1)
+	{
+		throw GradeTooHighException();
 	}
-	catch (GradeTooHighException& e){
-		std::cout << "\nGradeTooHighExceptionn \n";
-		exit(1);
-	}
+	_grade--;
 }
 
 void	Bureaucrat::decrease( void ){
-	try{
-		if (_grade == 150)
-		{
-			throw GradeTooLowException();
-		}
-		_grade++;
+	if (_grade == 150)
+	{
+		throw GradeTooLowException();
 	}
-	catch (GradeTooLowException& e){
-		std::cout << "\n GradeTooLowException \n";
-		exit(1);
-	}
+	_grade++;
 }
 
 const std::string & Bureaucrat::getName( void ) const{
@@ -68,11 +56,11 @@ int Bureaucrat::getGrade( void ) const{
 	return _grade;
 }
 
-void Bureaucrat::signForm( Form f ){
+void Bureaucrat::signForm( Form & f ){
 	try {
 		f.beSigned(*this);
 	}
-	catch (GradeTooLowException& e){
-		std::cout << "\n GradeTooLowException \n";
+	catch (const std::exception& e){
+		std::cout << "I have no rights to do it =(\n" << std::endl;
 	}
 }

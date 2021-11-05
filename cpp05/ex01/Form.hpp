@@ -11,7 +11,7 @@ class Form {
 		Form(unsigned int s, unsigned int e, std::string name);
 
         ~Form( void );
-		void getStatus( void );
+		std::string * getStatus( void ) const;
 		const std::string getName( void ) const;
 		void	beSigned(Bureaucrat & w);
 
@@ -19,14 +19,14 @@ class Form {
 		class GradeTooHighException : public std::exception{
 			const char * what () const throw ()
 			{
-				return "To big!";
+				return "\nGradeTooHighException\n";
 			}
 		};
 
 		class GradeTooLowException : public std::exception{
 			const char * what () const throw ()
 			{
-				return "To low!";
+				return "\nGradeTooLowException\n";
 			}
 		};
 
@@ -37,5 +37,7 @@ class Form {
 		const int	_grade_toexec;
 		const std::string	_name;
 };
+
+std::ostream & operator<<( std::ostream & o, Form const & rhs );
 
 #endif

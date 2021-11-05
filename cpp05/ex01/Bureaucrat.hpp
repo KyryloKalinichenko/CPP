@@ -12,14 +12,14 @@ class Bureaucrat {
 		class GradeTooHighException : public std::exception{
 			const char * what () const throw ()
 			{
-				return "To big!";
+				return "\nGradeTooHighException\n";
 			}
 		};
 
 		class GradeTooLowException : public std::exception{
 			const char * what () const throw ()
 			{
-				return "To low!";
+				return "\nGradeTooLowException\n";
 			}
 		};
         Bureaucrat( void );
@@ -28,7 +28,7 @@ class Bureaucrat {
         ~Bureaucrat( void );
 		const std::string & getName( void ) const ;
 		int getGrade( void ) const;
-		void	signForm( Form f );
+		void	signForm( Form& f );
 
         Bureaucrat & operator=( Bureaucrat const & rhs );
 		void	increase( void );

@@ -7,16 +7,31 @@ int main( void ){
 	Form f(10, 1, "lol");
 
 	std::cout << a;
+	std::cout << f;
 	f.getStatus();
-	a.signForm(f);
-	// for (int i = 0; i < 149 ; i++)
-	// {
-	// 	std::cout << i;
-	// 	a.increase();
-	// 	a.signForm();
-	// }
-	// std::cout << std::endl << a;
-
+	try
+	{
+		a.signForm(f);
+	}
+	catch(const std::exception& e)
+	{
+		std::cerr << e.what() << '\n';
+	}
+	
+	for (int i = 0; i < 149 ; i++)
+	{
+		try
+		{
+			a.increase();
+			a.signForm(f);
+		}
+		catch(const std::exception& e)
+		{
+			std::cerr << e.what() << '\n';
+		}
+	}
+	std::cout << std::endl << a;
+	
 	// for (int i = 0; i < 149 ; i++)
 	// {
 	// 	std::cout << i;
