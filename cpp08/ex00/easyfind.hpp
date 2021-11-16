@@ -10,7 +10,10 @@
 template< typename T >
 int easyfind(T const & x, int goal)
 {
-	return (std::find(x.begin(), x.end(), goal) != x.end());
+	if (*std::find(x.begin(), x.end(), goal) == goal)
+		return 1;
+	else
+		return 0;
 }
 
 #endif

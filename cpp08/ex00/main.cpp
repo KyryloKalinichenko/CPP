@@ -12,25 +12,17 @@ void test_list(std::list<int> l){
 	std::cout << easyfind(l, 50) << std::endl;
 }
 
-void test_vector( std::vector<int> vec){
-	std::cout << easyfind(vec, 42) << std::endl;
-	std::cout << easyfind(vec, 10) << std::endl;
-}
-
 void test_arr( std::array<int, 10> arr){
 	std::cout << easyfind(arr, 42) << std::endl;
 	std::cout << easyfind(arr, 1) << std::endl;
 }
 
 int main(void){
-	std::vector<int> vec(42, 10);
 	std::array<int, 10> arr = {1, 2, 3, 4, 5, 6, 7, 8, 9, 10};
 	std::list<int> l;
 
 	std::cout << "-------------" << std::endl;
 	test_list(l);
-	std::cout << "-------------" << std::endl;
-	test_vector(vec);
 	std::cout << "-------------" << std::endl;
 	test_arr(arr);
 	return 0;
